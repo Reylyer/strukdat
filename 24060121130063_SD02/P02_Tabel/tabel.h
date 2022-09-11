@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "boolean.h"
 
-#define TABEL_SIZE 11
+#define TABEL_SIZE 10
 
 /* type Tabel = < wadah : array[1..10] of integer,
                    size : integer > */
@@ -75,7 +75,7 @@ int SumEl (Tabel T);
 
 /*function AverageEl ( T:Tabel ) -> integer 
 	{mengembalikan nilai rata-rata elemen pengisi T } */
-int AverageEl (Tabel T);
+float AverageEl (Tabel T);
 
 /*function getMaxEl ( T: Tabel) -> integer
 	{mengembalikan nilai elemen terbesar } */
