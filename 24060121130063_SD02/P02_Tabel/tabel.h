@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "boolean.h"
 
-#define TABEL_SIZE 10
+#define TABEL_SIZE 11
 
 /* type Tabel = < wadah : array[1..10] of integer,
                    size : integer > */

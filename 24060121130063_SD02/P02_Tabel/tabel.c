@@ -32,7 +32,7 @@ void printTable (Tabel T){ // x
     int i;
 
     // Algortima
-    for( i = 0; i < TABEL_SIZE; i++){
+    for( i = 1; i < TABEL_SIZE; i++){
         printf("%d", T.wadah[i]);
         if( i == TABEL_SIZE - 1) printf("\n");
         else printf(" ");
@@ -52,9 +52,9 @@ void viewTable (Tabel T){ // x
     if(isEmptyTable(T))
         printf("Tabel Kosong\n");
     else{
-        for( i = 0; i < T.size; i++){
+        for( i = 1; i <= T.size; i++){
             printf("%d", T.wadah[i]);
-            if( i == T.size - 1) printf("\n");
+            if( i == T.size) printf("\n");
             else printf(" ");
         }
 
@@ -76,7 +76,7 @@ int countEmpty (Tabel T){ // x
      // Kamus Lokal
     
      // Algortima
-    return TABEL_SIZE - getSize(T);
+    return TABEL_SIZE - getSize(T) - 1;
 }
 
 /*function isEmptyTable( T: (*Tabel).-> boolean
@@ -110,10 +110,10 @@ void populate1 (Tabel *T, int N){ // x
     if( N < 0 || N > TABEL_SIZE)
         printf("N tidak valid");
     else {
-        i = 0;
+        i = 1;
         printf("Masukkan nilai tabel ke-%d: ", i);
         scanf("%d", &temp);
-        while( i < N){
+        while( i <= N){
             if( temp > 0){
                 (*T).wadah[i] = temp;
                 i++;
@@ -134,7 +134,7 @@ void searchX1 (Tabel T, int X, int *Pos){ // x
     // Kamus Lokal
     
     // Algortima
-    *Pos = 0;
+    *Pos = 1;
     while( *Pos != TABEL_SIZE && T.wadah[*Pos] != X)
         (*Pos)++;
     
@@ -151,7 +151,7 @@ void countX (Tabel T, int X, int *Byk){ // x
     
     // Algortima
     *Byk = 0;
-    for( i = 0; i < getSize(T); i++){
+    for( i = 1; i <= getSize(T); i++){
         if( T.wadah[i] == X){
             (*Byk)++;
         }
@@ -166,7 +166,7 @@ int SumEl (Tabel T){ // x
     
     // Algoritma
     sum = 0;
-    for( i = 0; i < getSize(T); i++){
+    for( i = 1; i <= getSize(T); i++){
         sum += T.wadah[i];
     }
     return sum;
@@ -193,8 +193,8 @@ int getMaxEl (Tabel T){ // x
     if(isEmptyTable(T)){
         printf("Tabel kosong\n");
     } else {
-        max = T.wadah[0];
-        for( i = 1; i < getSize(T); i++){
+        max = T.wadah[1];
+        for( i = 2; i <= getSize(T); i++){
             if(max < T.wadah[i])
                 max = T.wadah[i];
         }
@@ -213,8 +213,8 @@ int getMinEl (Tabel T){ // x
     if(isEmptyTable(T)){
         printf("Tabel kosong\n");
     } else {
-        min = T.wadah[0];
-        for( i = 1; i < getSize(T); i++){
+        min = T.wadah[1];
+        for( i = 2; i <= getSize(T); i++){
             if(min > T.wadah[i])
                 min = T.wadah[i];
         }
@@ -234,7 +234,7 @@ void populate2 (Tabel *T){ // x
     int i, temp;
     
     // Algortima
-    i = 0;
+    i = 1;
     printf("Masukkan nilai tabel ke-%d: ", i);
     scanf("%d", &temp);
 
@@ -246,7 +246,7 @@ void populate2 (Tabel *T){ // x
     }
     printf("Memberhentikan input\n");
 
-    (*T).size = i;
+    (*T).size = i - 1;
     
 }
 
@@ -262,7 +262,7 @@ void addXTable (Tabel *T, int X){ // x
     if( !isFullTable(*T)){
         if( X > 0){
             posisi = getSize(*T);
-            (*T).wadah[posisi] = X;
+            (*T).wadah[posisi + 1] = X;
             (*T).size++;
         } else {
             printf("X tidak valid!\n");   
@@ -281,7 +281,7 @@ void delXTable (Tabel *T, int X){ // x
     int i, j;
     
     // Algoritma
-    i = 0;
+    i = 1;
     while( (*T).wadah[i] != X && i != TABEL_SIZE)  i++;
     for( j = i; j < TABEL_SIZE; j++){
         (*T).wadah[j] = (*T).wadah[j + 1];
@@ -320,7 +320,7 @@ int Modus (Tabel T){
     // Algoritma
     createTable(&Tt);
     Tt.size = getSize(T);
-    for( i = 0; i < getSize(T); i++){
+    for( i = 1; i <= getSize(T); i++){
         countX(T, T.wadah[i], &byk);
         Tt.wadah[i] = byk;
     }
