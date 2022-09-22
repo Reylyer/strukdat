@@ -9,11 +9,16 @@
 
 
 void makeMatriks(Matriks *M){
+	// Kamus lokal
+	int i, j;
+	
+	// Algoritma
+	
 	(*M).nbbar = 0; 
 	M->nbkol = 0; 
-	for (int i = 0; i < 11; i++)
+	for (i = 0; i < 11; i++)
 	{
-		for(int j=0;j<11;j++){
+		for(j=0;j<11;j++){
 			(*M).wadah[i][j] = -999;
 		}
 	}
@@ -25,18 +30,33 @@ void makeMatriks(Matriks *M){
 /*function getNbbar(M:Matriks)->integer*/
 /*{mengembalikan nilai banyak baris matriks M}*/
 int getNbbar(Matriks M){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	return M.nbbar;
 }
 
 /*function getNbbar(M:Matriks)->integer*/
 /*{mengembalikan nilai banyak baris matriks M}*/
 int getNbkol(Matriks M){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	return M.nbkol;
 }
 
 /*function getInfoCell(M:Matriks,X:integer,Y:integer)->integer*/
 /*{mengembalikan nilai/isi elemen baris X, kolom Y, matriks M}*/
 int getInfoCell(Matriks M, int X, int Y){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	return M.wadah[X][Y];
 }
 
@@ -46,6 +66,11 @@ int getInfoCell(Matriks M, int X, int Y){
 /*{F.S.: -}*/
 /*{proses: mengisi banyak baris efektif dengan X}*/
 void setNbbar(Matriks *M, int X){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	M->nbbar = X;
 }
 
@@ -54,6 +79,11 @@ void setNbbar(Matriks *M, int X){
 /*{F.S.: -}*/
 /*{proses: mengisi banyak kolom efektif dengan Y}*/
 void setNbkol(Matriks *M, int Y){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	M->nbkol = Y;
 }
 
@@ -63,6 +93,11 @@ void setNbkol(Matriks *M, int Y){
 /*{F.S.: cell (X,Y) berisi C }*/
 /*{proses: mengisi cell pada baris X, kolom Y dengan C }*/
 void setInfoCell(Matriks *M, int X, int Y, int C){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	M->wadah[X][Y] = C;
 }
 
@@ -70,12 +105,22 @@ void setInfoCell(Matriks *M, int X, int Y, int C){
 /*function isEmptyMatriks(M:Matriks)->boolean*/
 /*{mengembalikan true jika matriks M kosong}*/
 bool isEmptyMatriks(Matriks M){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	return M.nbbar == 0 || M.nbkol == 0;
 }
 
 /*function isFullMatriks(M:Matriks)->boolean*/
 /*{mengembalikan true jika matriks M penuh}*/
 bool isFullMatriks(Matriks M){
+	// Kamus lokal
+	
+	
+	// Algoritma
+	
 	return M.nbbar == 10 && M.nbkol == 10;
 }
 
@@ -84,11 +129,15 @@ bool isFullMatriks(Matriks M){
 /*{I.S.: M terdefinisi}*/
 /*{F.S.: }*/
 /*{Proses: mencetak info cell matriks ke layar, termasuk sel kosong}*/
-void printMatriks(Matriks M)
-{
-	for (int i = 1; i <= 10; i++)
+void printMatriks(Matriks M){
+	// Kamus lokal
+	int i, j;
+	
+	// Algoritma
+	
+	for (i = 1; i <= 10; i++)
 	{
-		for(int j = 1; j <= 10; j++){
+		for(j = 1; j <= 10; j++){
 			printf("%d ",(M).wadah[i][j]);
 		}
 		printf("\n");
@@ -99,12 +148,16 @@ void printMatriks(Matriks M)
 /*{I.S.: M terdefinisi}*/
 /*{F.S.: }*/
 /*{Proses: mencetak info cell matriks yang tidak kosong ke layar}*/
-void viewMatriks(Matriks M)
-{
+void viewMatriks(Matriks M){
+	// Kamus lokal
+	int i, j;
+	
+	// Algoritma
+	
 	if(!isEmptyMatriks(M)){
-		for (int i = 1; i <= M.nbbar; i++)
+		for (i = 1; i <= M.nbbar; i++)
 		{
-			for(int j = 1; j <= M.nbkol; j++){
+			for(j = 1; j <= M.nbkol; j++){
 				printf("%d ",(M).wadah[i][j]);
 			}
 			printf("\n");
@@ -117,11 +170,16 @@ void viewMatriks(Matriks M)
 /*function sumCellMatriks(M:Matriks)->integer*/
 /*{mengembalikan jumlah nilai elemen matriks M}*/
 int sumCellMatriks(Matriks M){
-	int sum = 0;
+	// Kamus lokal
+	int sum, i, j;
+	
+	// Algoritma
+	
+	sum = 0;
 	if(!isEmptyMatriks(M)){
-		for (int i = 1; i <= M.nbbar ; i++)
+		for (i = 1; i <= M.nbbar ; i++)
 		{
-			for(int j = 1; j <= M.nbkol; j++){
+			for(j = 1; j <= M.nbkol; j++){
 				sum += M.wadah[i][j];
 			}
 		}
@@ -138,11 +196,16 @@ float avgCellMatriks(Matriks M){
 /*function maxCellMatriks(M:Matriks)->integer*/
 /*{mengembalikan nilai terbesar elemen matriks M}*/
 int maxCellMatriks(Matriks M){
-	int max = M.wadah[1][1];
+	// Kamus lokal
+	int max, i, j;
+	
+	// Algoritma
+	
+	max = M.wadah[1][1];
 	if(!isEmptyMatriks(M)){
-		for (int i = 1; i <= M.nbbar; i++)
+		for (i = 1; i <= M.nbbar; i++)
 		{
-			for(int j = 1; j <= M.nbkol; j++){
+			for(j = 1; j <= M.nbkol; j++){
 				if(max<M.wadah[i][j]){
 					max = M.wadah[i][j];
 				}
@@ -155,11 +218,16 @@ int maxCellMatriks(Matriks M){
 /*function minCellMatriks(M:Matriks)->integer*/
 /*{mengembalikan nilai terkecil elemen matriks M}*/
 int minCellMatriks(Matriks M){
-	int min = M.wadah[1][1];
+	// Kamus lokal
+	int min, i, j;
+	
+	// Algoritma
+	
+	min = M.wadah[1][1];
 	if(!isEmptyMatriks(M)){
-		for (int i = 1; i <= M.nbbar; i++)
+		for (i = 1; i <= M.nbbar; i++)
 		{
-			for(int j = 1; j <= M.nbkol; j++){
+			for(j = 1; j <= M.nbkol; j++){
 				if(min > M.wadah[i][j]){
 					min = M.wadah[i][j];
 				}
@@ -173,11 +241,16 @@ int minCellMatriks(Matriks M){
 /*function countA(M:Matriks,A:integer)->integer*/
 /*{mengembalikan banyak elemen bernilai A dalam matriks M}*/
 int countA(Matriks M, int A){
+	// Kamus lokal
 	int count = 0;
+	int i, j;
+	
+	// Algoritma
+	
 	if(!isEmptyMatriks(M)){
-		for (int i = 1; i <= M.nbbar; i++)
+		for (i = 1; i <= M.nbbar; i++)
 		{
-			for(int j = 1; j <= M.nbkol; j++){
+			for(j = 1; j <= M.nbkol; j++){
 				if(M.wadah[i][j]==A){
 					count++;
 				}
@@ -194,11 +267,17 @@ output X:integer, output Y:integer)*/
 /*{proses: mencari nilai A dalam cell matriks M}*/
 /*{bila tidak ketemu, X=Y=-999}*/
 void searchMatriks(Matriks M, int A){
+	// Kamus lokal
 	int X=-999,Y=-999;
+	int i, j;
+	
+	
+	// Algoritma
+	
 	if(!isEmptyMatriks(M)){
-		for (int i = 1; i <= M.nbbar; i++)
+		for (i = 1; i <= M.nbbar; i++)
 		{
-			for(int j = 1; j <= M.nbkol; j++){
+			for(j = 1; j <= M.nbkol; j++){
 				if(M.wadah[i][j]==A){
 					X=i+1;
 					Y=j+1;
@@ -218,17 +297,22 @@ baris menjadi kolom dan sebaliknya}*/
 /*{misal: M=[1,2] menjadi [1,4]
 ____________[4,5]         [2,5] }*/
 void transpose(Matriks *M){
+	// Kamus lokal
+	int i, j, buffer;
+	
+	// Algoritma
+	
 	if(!isEmptyMatriks(*M)){
-		for( int i = 1; i <= M->nbbar; i++)
+		for( i = 1; i <= M->nbbar; i++)
 		{
-			for ( int j = i+1; j <= M->nbkol; j++ ) 
+			for ( j = i+1; j <= M->nbkol; j++ ) 
 			{
-				int buffer = M->wadah[i][j];
+				buffer = M->wadah[i][j];
 				M->wadah[i][j] = M->wadah[j][i];
 				M->wadah[j][i] = buffer;
 			}
 		}
-		int buffer = M->nbbar;
+		buffer = M->nbbar;
 		M->nbbar = M->nbkol;
 		M->nbkol = buffer;
 	}
@@ -240,10 +324,15 @@ void transpose(Matriks *M){
 /*{F.S.: M terdefinisi, M.nbbar=X, M.nbkol=Y }*/
 /*{proses: membuat matriks dengan baris dan kolom efektif yang diinputkan }*/
 void setMatriks(Matriks *M, int X, int Y){
+	// Kamus lokal
 	int valBar, valKol;
-	for (int i = 1; i <= X; i++)
+	int i, j;
+	
+	// Algoritma
+	
+	for ( i = 1; i <= X; i++)
 	{
-		for(int j=1;j<=Y;j++){
+		for(j = 1; j <= Y; j++){
 			printf("Matriks [%d][%d] : ",i,j);
 			scanf("%d",&M->wadah[i][j]);
 		}
