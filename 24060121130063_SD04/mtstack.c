@@ -74,7 +74,7 @@ int main()
 	scanf("%d", &n);
 	pushN(&P, n);
 	printf("Apakah stack P palindrom ? %s\n", b2s(isPalindrom(P)));
-
+	
 
 	
 	

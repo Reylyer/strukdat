@@ -152,9 +152,14 @@ void pushN (Tstack *T, int N){
 	{F.S.: T bertambah 1 elemen (E) atau menjadi kosong bila penuh }
 	{Proses: menumpuk top atau menghapus semua elemen }*/
 void pushBabel1 (Tstack *T, char E){
-
+	// Kamus lokal
+	
+	
+	// Algoritma
+	if( isFullStack(*T)){
+		createStack(T);
+	} else{
+		push(T, E);
+	}
 }
-/*procedure push ( input/output T:Tstack, input E: character )
-	{I.S.: T,E terdefinisi}
-	{F.S.: infotop tetap, atau berisi nilai E }
-	{Proses: mengisi elemen top baru, bila belum penuh }*/
+
