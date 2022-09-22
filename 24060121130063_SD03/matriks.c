@@ -279,8 +279,8 @@ void searchMatriks(Matriks M, int A){
 		{
 			for(j = 1; j <= M.nbkol; j++){
 				if(M.wadah[i][j]==A){
-					X=i+1;
-					Y=j+1;
+					X=i;
+					Y=j;
 				}
 			}
 		}
