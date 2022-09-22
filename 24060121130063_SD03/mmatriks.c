@@ -105,9 +105,9 @@ int main() {
 	printf("========== MEMBUAT MATRIKS SATUAN ==========\n");
 	setNbbar(&D, 9);
 	setNbkol(&D, 9);
-	for( i = 0; i < 9; i++){
-		for( j = 0; j < 9; j++){
-			if((i == j) || (i == 9 - j - 1) || (j == 9 - i - 1)){
+	for( i = 1; i <= 9; i++){
+		for( j = 1; j <= 9; j++){
+			if(i == j) {
 				setInfoCell(&D, i, j, 1);
 			} else {
 				setInfoCell(&D, i, j, 0);
