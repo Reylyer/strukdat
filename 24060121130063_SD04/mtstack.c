@@ -29,7 +29,10 @@ boolean isPalindrom( Tstack T){
 	}
 
 	assumsi = true;
-	while( assumsi && !isEmptyStack(pal)){
+	if( panjang % 2) pop(&T, &e);
+	for(; assumsi && !isEmptyStack(pal);){
+		// printStack(T);
+		// printStack(pal);
 		pop(&T, &e);
 		pop(&pal, &f);
 		assumsi &= e == f;		
@@ -74,9 +77,6 @@ int main()
 	scanf("%d", &n);
 	pushN(&P, n);
 	printf("Apakah stack P palindrom ? %s\n", b2s(isPalindrom(P)));
-	
-
-	
 	
 	
 	return 0;
