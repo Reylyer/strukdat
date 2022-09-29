@@ -109,11 +109,16 @@ void viewStack (Tstack T){
 	int i;
 	
 	// Algoritma
+	if( ! isEmptyStack){
 	
-	for( i = 1; i < T.top; i++){
-		printf("%c;", T.wadah[i]);
+		for( i = 1; i < T.top; i++){
+			printf("%c;", T.wadah[i]);
+		}
+		printf("%c\n", T.wadah[i]);
 	}
-	printf("%c\n", T.wadah[i]);
+	else {
+        printf("Stack kosong!\n");
+    }
 }
 
 /* selanjutnya tugas algoritma palindrom dikerjakan di main */
@@ -131,7 +136,7 @@ void pushN (Tstack *T, int N){
 	char buffer;
 	
 	// Algoritma
-	if( T->top + N > MAX_STACK)
+	if( T->top + N >= MAX_STACK)
 		printf("Terlalu banyak, akan menyebabkan stack overflow!\n");
 	else {
 		i = T->top + 1;
